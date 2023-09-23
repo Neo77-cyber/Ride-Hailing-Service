@@ -28,7 +28,7 @@ async function getCoordinates(address) {
   }
 
   const data = await response.json();
-  console.log(data);
+  
 
   if (data.status !== 'OK') {
     throw new Error('Geocoding request did not return OK status');
@@ -49,7 +49,7 @@ function calculateDistance(cord1, cord2) {
 
   const distance = geolib.getDistance(cord1, cord2);
   
-  console.log(distance);
+  
 
   return distance
 
@@ -101,7 +101,7 @@ const CreateRide = async (req, res) => {
       body: JSON.stringify(transactionParams),
     });
 
-    console.log(response);
+    
 
     
     
