@@ -50,7 +50,6 @@ function calculateDistance(cord1, cord2) {
   const distance = geolib.getDistance(cord1, cord2);
   
   
-
   return distance
 
 }
@@ -102,10 +101,6 @@ const CreateRide = async (req, res) => {
     });
 
     
-
-    
-    
-    
     if (!response.ok) {
       const responseData = await response.json();
       console.error('Paystack API request failed. Status code:', response.status);
@@ -117,7 +112,6 @@ const CreateRide = async (req, res) => {
     const responseData = await response.json();
 
     
-
     if (responseData.status !== true) {
       
       throw new Error('Paystack API returned an error');
@@ -126,10 +120,6 @@ const CreateRide = async (req, res) => {
     const authorizationUrl = responseData.data.authorization_url;
     
   
-      
-      
-
-    
     const ride = await Ride.create({user: user.userId, customerName,pickupPhoneNumber,pickupAddress,recipientName,recipientPhoneNumber,recipientAddress,category, distance:distanceInMeters, price:finalPrice})
 
     res.status(StatusCodes.CREATED).json({ride, authorizationUrl})
@@ -164,8 +154,6 @@ const rideHistory = async (req, res) => {
     
     const executionTime = endTime - startTime
 
-
-    
 
     client.setex('books', 3600, JSON.stringify(rides));
 
