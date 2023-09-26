@@ -1,12 +1,13 @@
-## Online-Bookstore
+# Ride-Hailing Service
 
-This is an online bookstore using Node.js to simulate a real-world scenario. This project was stress-tested with 10,000 simultaneous users. Key features included:
+This is a backend API service of our ride-hailing platform. This Express API powers the core functionality of the ride booking and payment system.
 
-- Endpoints for performance testing with and without database optimization.
-- Implementation of pagination for efficient data retrieval.
-- Integration of server-side caching using Redis.
-- Security enhancements through the use of security packages.
-- Thorough unit testing with Jest.
+## Features
+
+- **Ride Booking:** Create rides by providing pickup and recipient addresses.
+- **Distance Calculation:** Calculate ride distances accurately for pricing.
+- **Payment Integration:** Secure payment processing using Paystack.
+- **RESTful API:** Well-structured API endpoints for easy integration.
 
 ## Getting Started
 
